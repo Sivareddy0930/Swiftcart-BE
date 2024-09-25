@@ -25,7 +25,7 @@ import com.greetlabs.swiftcart.service.ProductService;
 import lombok.RequiredArgsConstructor;
 
 
-@CrossOrigin("https://swiftcart-fe-bqhmhnddhvf9d6c5.southindia-01.azurewebsites.net/")
+@CrossOrigin("https://swiftcart-fe-bqhmhnddhvf9d6c5.southindia-01.azurewebsites.net")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/swift-cart")
