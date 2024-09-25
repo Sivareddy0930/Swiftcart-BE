@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://swiftcart-fe-bqhmhnddhvf9d6c5.southindia-01.azurewebsites.net")
 @RestController
 @RequestMapping("/swift-cart")
 public class UserController {
