@@ -1,6 +1,7 @@
 package com.greetlabs.swiftcart.service.Impl;
 
 import com.greetlabs.swiftcart.dto.LoginDto;
+import com.greetlabs.swiftcart.exception.BadUserCredentialsException;
 import com.greetlabs.swiftcart.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,10 +21,17 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String userLoginVerification(LoginDto loginDto) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUserEmail(),loginDto.getUserPassword()));
+        Authentication authentication;
+        try {
+            authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUserEmail(), loginDto.getUserPassword()));
+        }
+        catch (Exception e) {
+            throw new BadUserCredentialsException("Invalid email/password");
+        }
         if(authentication.isAuthenticated())
             return jwtService.generateToken(loginDto.getUserEmail());
-        return "Login failed!";
+
+        return "Login Failed";
     }
     
 }

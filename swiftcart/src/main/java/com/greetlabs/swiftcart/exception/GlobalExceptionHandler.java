@@ -28,6 +28,15 @@ public class GlobalExceptionHandler {
 
     }
 
+    @ExceptionHandler(BadUserCredentialsException.class)
+    public ResponseEntity<Map<String, String>> BadUserCredentialsException(BadUserCredentialsException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", "Bad user credentials");
+        response.put("message", ex.getMessage());
+
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+    }
+
     @ExceptionHandler(SignatureException.class)
     public ResponseEntity<Map<String, String>> handleSignatureException(SignatureException ex) {
         System.err.println("Invalid JWT signature: " + ex.getMessage());
