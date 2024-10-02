@@ -1,6 +1,6 @@
 package com.greetlabs.swiftcart.response;
 
-import java.util.Base64;
+
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,14 +13,14 @@ public class ProductResponse {
 	    private String ProductName;
 	    private double Price;
 	    private String photo;
-	    private int Discount;
+	    private Integer Discount;
 	    private String Category;
 	    private String Discription;
-	    public ProductResponse(int Id, String ProductName,  double Price, byte[] photoBytes,int Discount,String Category,String Discription) {
+	    public ProductResponse(int Id, String ProductName,  double Price, byte[] photoBytes,Integer Disocunt,String Category,String Discription) {
 	        this.Id = Id;
 	        this.ProductName = ProductName;
 	        this.Price = Price;
-	        this.photo = photoBytes != null ? Base64.getEncoder().encodeToString(photoBytes) : null;
+	        this.photo=photo;
 	        this.Discount=Discount;
 	        this.Category=Category;
 	        this.Discription=Discription;
