@@ -1,12 +1,12 @@
 package com.greetlabs.swiftcart.entity;
 
-import java.sql.Blob;
+
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="Product_details")
+@Table(name="product_details")
 @AllArgsConstructor
 @NoArgsConstructor	
 public class Product {
@@ -24,21 +24,20 @@ public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Id;
+	private int id;
 	
 	
-	private String ProductName;
+	private String productName;
 	
-	private double Price;
+	private double price;
 	
-	@Lob
-	private Blob Photo;
+	private String imageUrl;
 	
-	private int Disocunt;
+	private Integer discount;
 	
-	private String Category;
+	private String category;
 	
-	private String Discription;
-
+	private String description;
+	
 
 }

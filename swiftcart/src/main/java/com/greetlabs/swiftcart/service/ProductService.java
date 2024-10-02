@@ -6,18 +6,29 @@ import java.util.Optional;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.greetlabs.swiftcart.dto.ProductDto;
 import com.greetlabs.swiftcart.entity.Product;
 import com.greetlabs.swiftcart.response.ProductResponse;
 
 import io.jsonwebtoken.io.IOException;
 
 public interface ProductService {
-	
-	
-	Product addProduct(MultipartFile file,String ProductName,double Price,int Discount,String Category,String Discription)throws SQLException,IOException, java.io.IOException, Exception;
 
-	List<ProductResponse> getAllProducts();
-	
-	Optional<Product> getProductById(int Id);
+	Product saveProduct(Product product);
 
+	
+	Product addProduct(ProductDto productDto)throws SQLException,IOException, java.io.IOException, Exception;
+//
+//	List<ProductResponse> getAllProducts();
+//	
+//	Optional<ProductDto> getProductById(int Id);
+//	
+//	 byte[] getPhotoByProductId(int Id) throws SQLException;
+//	
+////	Product updateProduct(int Id, String ProductName, Double Price, byte[] photoBytes,Integer Disocunt,String Category,String Discription);
+//
+//	 void deleteProduct(int Id);
+//
+//	Product updateProduct(int Id, String ProductName, Double Price, byte[] photoBytes, Integer Disocunt,
+//			String Category, String Discription);
 }

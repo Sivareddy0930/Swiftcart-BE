@@ -1,9 +1,13 @@
 package com.greetlabs.swiftcart.repository;
 
+import java.io.Serializable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.greetlabs.swiftcart.entity.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+@Repository
+public interface ProductRepository extends JpaRepository<Product,Integer> {
 
 }
