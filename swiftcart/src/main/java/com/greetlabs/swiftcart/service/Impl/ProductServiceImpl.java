@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.greetlabs.swiftcart.dto.ProductDto;
 import com.greetlabs.swiftcart.entity.Product;
+import com.greetlabs.swiftcart.exception.ProductNotFoundException;
 import com.greetlabs.swiftcart.repository.ProductRepository;
 import com.greetlabs.swiftcart.service.ProductService;
 
@@ -44,9 +45,7 @@ public class ProductServiceImpl implements ProductService {
 		return repo.save(product);
 	}
 	
-	
-	
-//	
+
 	public Optional<ProductDto> getProductById(int id) {
 	   
 	    Optional<Product> product = repo.findById((int) id);
@@ -87,4 +86,39 @@ public class ProductServiceImpl implements ProductService {
 	                product.getDescription()
 	        );
 	    }
-}
+
+
+	@Override
+	public Product updateProduct(int id, String productName, Double price, String imageUrl, Integer discount,
+			String category, String description) {
+		 Optional<Product> existingProductOptional = repo.findById(id);
+	        
+	        if (!existingProductOptional.isPresent()) {
+	            throw new ProductNotFoundException("Product with ID " + id + " not found");
+	        }
+	        
+	        Product existingProduct = existingProductOptional.get();
+	        
+	        existingProduct.setProductName(productName);
+	        existingProduct.setPrice(price);
+	        existingProduct.setImageUrl(imageUrl);  
+	        existingProduct.setDiscount(discount);
+	        existingProduct.setCategory(category);
+	        existingProduct.setDescription(description);
+	        
+	        return repo.save(existingProduct);
+	    }
+
+
+	@Override
+	public void deleteProduct(int Id) {
+	        if (!repo.existsById(Id)) {
+	            throw new ProductNotFoundException("Product with ID " + Id + " not found");
+	        }
+
+	     
+	        repo.deleteById(Id);
+	    }
+		
+	}
+

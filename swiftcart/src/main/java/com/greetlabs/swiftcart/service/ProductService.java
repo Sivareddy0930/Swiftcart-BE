@@ -22,12 +22,9 @@ public interface ProductService {
 	List<ProductDto> getAllProducts();
 	
 	Optional<ProductDto> getProductById(int Id);
+	
+	Product updateProduct(int id, String productName, Double price, String imageUrl,Integer discount,String category,String description);
 
-//	
-////	Product updateProduct(int Id, String ProductName, Double Price, byte[] photoBytes,Integer Disocunt,String Category,String Discription);
-//
-//	 void deleteProduct(int Id);
-//
-//	Product updateProduct(int Id, String ProductName, Double Price, byte[] photoBytes, Integer Disocunt,
-//			String Category, String Discription);
+    void deleteProduct(int Id);
+
 }
