@@ -9,21 +9,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductResponse {
 	
-	   private int Id;
-	    private String ProductName;
-	    private double Price;
-	    private String photo;
-	    private Integer Discount;
-	    private String Category;
-	    private String Discription;
-	    public ProductResponse(int Id, String ProductName,  double Price, byte[] photoBytes,Integer Disocunt,String Category,String Discription) {
-	        this.Id = Id;
-	        this.ProductName = ProductName;
-	        this.Price = Price;
-	        this.photo=photo;
-	        this.Discount=Discount;
-	        this.Category=Category;
-	        this.Discription=Discription;
+	   private int id;
+	    private String productName;
+	    private double price;
+	    private String imageUrl;
+	    private Integer discount;
+	    private String category;
+	    private String description;
+	    public ProductResponse(int id, String productName,  double price, String imageUrl,Integer discount,String category,String description) {
+	        this.id = id;
+	        this.productName = productName;
+	        this.price = price;
+	        this.imageUrl=imageUrl;
+	        this.discount=discount;
+	        this.category=category;
+	        this.description=description;
 	    }
 
 }

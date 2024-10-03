@@ -3,12 +3,12 @@ package com.greetlabs.swiftcart.service.Impl;
 
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.greetlabs.swiftcart.dto.ProductDto;
 import com.greetlabs.swiftcart.entity.Product;
@@ -43,10 +43,48 @@ public class ProductServiceImpl implements ProductService {
 	public Product saveProduct(Product product) {
 		return repo.save(product);
 	}
+	
+	
+	
+//	
+	public Optional<ProductDto> getProductById(int id) {
+	   
+	    Optional<Product> product = repo.findById((int) id);
+
+	 
+	    return product.map(p -> new ProductDto(
+                p.getId(),
+	            p.getProductName(),
+	            p.getPrice(),
+	            p.getImageUrl(),
+	            p.getDiscount(),
+	            p.getCategory(),
+	            p.getDescription()
+	    ));
+	}
 
 
 
+	@Override
+	 public List<ProductDto> getAllProducts() {
+      
+        List<Product> products = repo.findAll();
+        
+        return products.stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
+}
 
-
-
+     
+	 private ProductDto convertToDto(Product product) {
+	        return new ProductDto(
+	                product.getId(),
+	                product.getProductName(),
+	                product.getPrice(),
+	                product.getImageUrl(),
+	                product.getDiscount(),
+	                product.getCategory(),
+	                product.getDescription()
+	        );
+	    }
 }
