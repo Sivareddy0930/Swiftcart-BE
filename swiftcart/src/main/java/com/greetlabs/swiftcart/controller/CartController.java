@@ -58,17 +58,17 @@
 //	}
 //	
 //	
-////	@GetMapping("/items")
-////	public ResponseEntity<List<Cart>> getCartItems(@RequestParam Long id){
-////		List<Cart> cartItems = service.getCartItems(id);
-////		return ResponseEntity.ok(cartItems);
-////	}
+//	@GetMapping("/items")
+//	public ResponseEntity<List<Cart>> getCartItems(@RequestParam Long id){
+//		List<Cart> cartItems = service.getCartItems(id);
+//		return ResponseEntity.ok(cartItems);
+//	}
 //	
 //	
-////	@DeleteMapping("/remove/{CartId}")
-////	public ResponseEntity<Void> removeFromCart(@PathVariable int CartId){
-////		service.removeFromCart(CartId);
-////		return ResponseEntity.noContent().build();
-////	}
+//	@DeleteMapping("/remove/{CartId}")
+//	public ResponseEntity<Void> removeFromCart(@PathVariable int CartId){
+//		service.removeFromCart(CartId);
+//		return ResponseEntity.noContent().build();
+//	}
 //
 //}
