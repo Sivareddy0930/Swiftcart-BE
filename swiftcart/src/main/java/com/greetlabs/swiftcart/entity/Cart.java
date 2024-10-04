@@ -22,9 +22,9 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CartId;
 	
-	@ManyToOne	
-	@JoinColumn(name = "useremail", nullable = false)
-	private String Email;
+//	@ManyToOne	
+	@JoinColumn(name = "useremail",nullable = false)
+	private String userEmail;
 	
 	@ManyToOne
 	@JoinColumn(name = "product_id", nullable = false)

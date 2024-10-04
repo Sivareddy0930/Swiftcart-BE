@@ -32,11 +32,11 @@ public class CartController  {
 	
 	@Autowired
 	private JwtService jwtservice;
-	
-	@GetMapping("/get")
-	public String name() {
-		return "working";
-	}
+//	
+//	@GetMapping("/get")
+//	public String name() {
+//		return "working";
+//	}
 	
 	@PostMapping("/cart/addtocart")
 	public ResponseEntity<CartResponseDto> addTOCart(@RequestBody CartDto cartDto,
@@ -58,11 +58,11 @@ public class CartController  {
 	}
 	
 	
-	@GetMapping("/items")
-	public ResponseEntity<List<Cart>> getCartItems(@RequestParam Long id){
-		List<Cart> cartItems = service.getCartItems(id);
-		return ResponseEntity.ok(cartItems);
-	}
+//	@GetMapping("/items")
+//	public ResponseEntity<List<Cart>> getCartItems(@RequestParam Long id){
+//		List<Cart> cartItems = service.getCartItems(id);
+//		return ResponseEntity.ok(cartItems);
+//	}
 	
 	
 	@DeleteMapping("/remove/{CartId}")
