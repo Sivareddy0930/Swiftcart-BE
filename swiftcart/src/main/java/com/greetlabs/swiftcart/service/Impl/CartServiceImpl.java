@@ -31,14 +31,14 @@ public class CartServiceImpl {
 		Product product=prorepo.findById(productId).orElseThrow(()->new RunTimeException("Product Not Found"));
 		
 		 Cart cartItem = new Cart();
-	        cartItem.setEmail(Email);
+	        cartItem.setUserEmail(Email);
 	        cartItem.setProduct(product);
 	        cartItem.setQuantity(quantity);
 	        repo.save(cartItem);
 	        
 	        CartResponseDto cartResponseDto = new CartResponseDto();
 	        cartResponseDto.setCartId(cartItem.getCartId());
-	        cartResponseDto.setEmail(cartItem.getEmail());
+	        cartResponseDto.setEmail(cartItem.getUserEmail());
 	        
 	        // Create DTO to return
 	        ProductDto ProductDto = new ProductDto();
@@ -58,9 +58,9 @@ public class CartServiceImpl {
 	    }
 	
 	
-	public List<Cart> getCartItems(Long id){
-		User user = userepo.findById(id).orElseThrow(()->new RunTimeException("User Not Found"));
-		return repo.findByUser(user);
+	public List<Cart> getCartItems(String email){
+//		User user = userepo.findByUserEmail(email).orElseThrow(()->new RunTimeException("User Not Found"));
+		return repo.findByUserEmail(email);
 	} 
 
 	
