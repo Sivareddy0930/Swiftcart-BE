@@ -111,13 +111,14 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
-	public void deleteProduct(int Id) {
+	public Product deleteProduct(int Id) {
 	        if (!repo.existsById(Id)) {
 	            throw new ProductNotFoundException("Product with ID " + Id + " not found");
 	        }
 
 	     
 	        repo.deleteById(Id);
+			return null;
 	    }
 		
 	}

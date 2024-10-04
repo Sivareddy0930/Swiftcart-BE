@@ -22,12 +22,12 @@
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //	private int CartId;
 //	
-////	@ManyToOne	
-////	@JoinColumn(name = "useremail", nullable = false)
+//	@ManyToOne	
+//	@JoinColumn(name = "useremail", nullable = false)
 //	private String Email;
 //	
-////	@ManyToOne
-////	@JoinColumn(name = "product_id", nullable = false)
+//	@ManyToOne
+//	@JoinColumn(name = "product_id", nullable = false)
 //    private Product product;
 //	
 //	private Integer quantity;
