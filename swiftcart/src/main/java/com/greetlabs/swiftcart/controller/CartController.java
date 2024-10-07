@@ -58,11 +58,11 @@ public class CartController  {
 	}
 	
 	
-//	@GetMapping("/items")
-//	public ResponseEntity<List<Cart>> getCartItems(@RequestParam Long id){
-//		List<Cart> cartItems = service.getCartItems(id);
-//		return ResponseEntity.ok(cartItems);
-//	}
+	@GetMapping("/items")
+	public ResponseEntity<List<Cart>> getCartItems(@RequestParam String UserEmail){
+		List<Cart> cartItems = service.getCartItems(UserEmail);
+		return ResponseEntity.ok(cartItems);
+	}
 	
 	
 	@DeleteMapping("/remove/{CartId}")
