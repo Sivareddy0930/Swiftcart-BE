@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.greetlabs.swiftcart.dto.CartDto;
 import com.greetlabs.swiftcart.dto.CartResponseDto;
 import com.greetlabs.swiftcart.entity.Cart;
+import com.greetlabs.swiftcart.repository.CartRepository;
 import com.greetlabs.swiftcart.service.Impl.CartServiceImpl;
 import com.greetlabs.swiftcart.service.Impl.JwtService;
 
@@ -32,6 +33,9 @@ public class CartController  {
 	
 	@Autowired
 	private JwtService jwtservice;
+	
+	@Autowired
+	private CartRepository repo;
 //	
 //	@GetMapping("/get")
 //	public String name() {
@@ -59,9 +63,9 @@ public class CartController  {
 	
 	
 	@GetMapping("/items")
-	public ResponseEntity<List<Cart>> getCartItems(@RequestParam String UserEmail){
-		List<Cart> cartItems = service.getCartItems(UserEmail);
-		return ResponseEntity.ok(cartItems);
+	public List<Cart> getCartItems(@RequestParam("userEmail") String userEmail){
+//		List<Cart> cartItems = service.getCartItems(userEmail);
+		return repo.findByuserEmail(userEmail);
 	}
 	
 	
