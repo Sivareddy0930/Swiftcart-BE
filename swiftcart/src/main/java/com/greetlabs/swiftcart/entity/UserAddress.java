@@ -36,6 +36,6 @@ public class UserAddress {
 	private String country;
 	
 //	@ManyToOne	
-	@JoinColumn(name = "userEmail",nullable = false)
+//	@JoinColumn(name = "userEmail",nullable = false)
 	private String userEmail;
 }
