@@ -11,6 +11,7 @@ public interface AddressService {
 
 	UserAddressDTO saveAddress(String UserEmail, UserAddressDTO address);
 	
+	 void deleteaddress(Long addressId);
 
 
 }

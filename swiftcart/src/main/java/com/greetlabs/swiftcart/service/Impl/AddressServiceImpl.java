@@ -71,5 +71,8 @@ public class AddressServiceImpl implements AddressService {
 		return repo.findByUserEmail(userEmail);
 	}
 
+	public void deleteaddress(Long addressId) {
+		repo.deleteById(addressId);
+	}
 
 }
