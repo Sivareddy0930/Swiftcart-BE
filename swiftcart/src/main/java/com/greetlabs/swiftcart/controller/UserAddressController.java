@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +56,16 @@ public class UserAddressController {
 
 		return service.findByUserEmail(userEmail);
 	}
+	
+	@PutMapping("/updateAddress")
+	public ResponseEntity<UserAddressDTO> updateAddress(@PathVariable String userEmail,@RequestBody UserAddressDTO useradressDto){
+		
+		UserAddressDTO updatedAddress=service.saveAddress(userEmail, useradressDto);
+		
+		return ResponseEntity.ok(updatedAddress);
+		
+	}
+	
 	
 	@DeleteMapping("/delete/{addressId}")
 	public ResponseEntity<Void> deleteaddress(@PathVariable Long addressId){
