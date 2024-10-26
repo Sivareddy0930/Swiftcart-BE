@@ -47,7 +47,10 @@ public class UserAddressController {
 	}
 	
 	@GetMapping("/address")
-	public List<UserAddress> getCartItems(@PathVariable ("userEmail") String userEmail){
+	public List<UserAddress> getadddress(@RequestHeader ("Authorization") String token){
+		
+		String jwtToken = token.replace("Bearer ", "").trim();
+		String userEmail=jwtservice.extractUserName(jwtToken);
 
 		return service.findByUserEmail(userEmail);
 	}
