@@ -76,16 +76,7 @@ public class ProductController {
 
 	        return ResponseEntity.ok(updatedProduct);
 	    }
-	  
-	  
-	  @DeleteMapping("/deleteproduct/{id}")
-	  public ResponseEntity<Product> deleteProduct(@PathVariable int id){
-		  
-		  Product pro=service.deleteProduct(id);
-		  
-		  return ResponseEntity.ok(pro);
-		  
-	  }
+
 }
 	
 	
