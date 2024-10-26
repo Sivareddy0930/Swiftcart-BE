@@ -2,6 +2,8 @@ package com.greetlabs.swiftcart.service.Impl;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,7 @@ import com.greetlabs.swiftcart.dto.UserAddressDTO;
 import com.greetlabs.swiftcart.entity.UserAddress;
 import com.greetlabs.swiftcart.repository.AddressRepository;
 import com.greetlabs.swiftcart.service.AddressService;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -23,33 +26,34 @@ public class AddressServiceImpl implements AddressService {
 	private AddressRepository repo;
 	
 	@Override
-	public UserAddressDTO saveAddress(UserAddressDTO address) {
-		
-//		 User user = userepo.findById(userId)
-//                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
+	public UserAddressDTO saveAddress(String UserEmail, UserAddressDTO userAddressDto) {
 		
 		
 		 
-//	    if (UserEmail == null || UserEmail.isEmpty()) {
-//	        throw new RuntimeException("Email cannot be null or empty");
-//	    }
-//
-//	    
+	    if (UserEmail == null || UserEmail.isEmpty()) {
+	        throw new RuntimeException("Email cannot be null or empty");
+	    }
+
+	    
 //	    Product product = prorepo.findById(productId)
 //	            .orElseThrow(() -> new RuntimeException("Product Not Found"));
 
 		
 		UserAddress useraddress=new UserAddress(
-				address.getAddressId(),
-				address.getName(),
-				address.getMobileNumber(),
-				address.getPinCode(),
-				address.getLocality(),
-				address.getCity(),
-				address.getState(),
-				address.getCountry(),
-				address.getUserEmail()
+				userAddressDto.getAddressId(),
+				userAddressDto.getName(),
+				userAddressDto.getMobileNumber(),
+				userAddressDto.getPinCode(),
+				userAddressDto.getLocality(),
+				userAddressDto.getCity(),
+				userAddressDto.getState(),
+				userAddressDto.getCountry(),
+				userAddressDto.getUserEmail()
+				
 				);
+		      
+		
+		
 		UserAddress saveAddress=repo.save(useraddress);	
 		
 		UserAddressDTO addressDTO=new UserAddressDTO(
@@ -66,9 +70,15 @@ public class AddressServiceImpl implements AddressService {
 		
 		
 		return addressDTO;
+	    
 		
 
 	}
-	
-	
+
+	@Override
+	public List<UserAddress> findByUserEmail(String userEmail) {
+		return repo.findByUserEmail(userEmail);
+	}
+
+
 }
