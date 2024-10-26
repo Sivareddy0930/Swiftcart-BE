@@ -23,7 +23,7 @@ public class Cart {
 	private int CartId;
 	
 //	@ManyToOne	
-	@JoinColumn(name = "useremail",nullable = false)
+	@JoinColumn(name = "userEmail",nullable = false)
 	private String userEmail;
 	
 	@ManyToOne

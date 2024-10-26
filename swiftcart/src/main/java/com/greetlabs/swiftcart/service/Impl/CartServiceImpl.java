@@ -9,9 +9,10 @@ import com.greetlabs.swiftcart.dto.CartResponseDto;
 import com.greetlabs.swiftcart.dto.ProductDto;
 import com.greetlabs.swiftcart.entity.Cart;
 import com.greetlabs.swiftcart.entity.Product;
-import com.greetlabs.swiftcart.exception.RunTimeException;
 import com.greetlabs.swiftcart.repository.CartRepository;
 import com.greetlabs.swiftcart.repository.ProductRepository;
+
+import jakarta.validation.constraints.Email;
 
 @Service
 public class CartServiceImpl {
@@ -22,7 +23,7 @@ public class CartServiceImpl {
 	@Autowired
 	private ProductRepository prorepo;
 	
-	public CartResponseDto addToCart(String UserEmail, Integer productId, Integer quantity) {
+	public CartResponseDto addToCart(@Email String UserEmail, Integer productId, Integer quantity) {
 	    
 	    if (UserEmail == null || UserEmail.isEmpty()) {
 	        throw new RuntimeException("Email cannot be null or empty");
@@ -65,7 +66,7 @@ public class CartServiceImpl {
 	
 	public List<Cart> getCartItems(String userEmail){
 
-		return repo.findByuserEmail(userEmail);
+		return repo.findByUserEmail(userEmail);
 	} 
 
 	

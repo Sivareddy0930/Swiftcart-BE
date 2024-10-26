@@ -3,27 +3,72 @@ package com.greetlabs.swiftcart.service.Impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 import org.springframework.stereotype.Service;
 
-import com.greetlabs.swiftcart.entity.User;
+import com.greetlabs.swiftcart.dto.UserAddressDTO;
+import com.greetlabs.swiftcart.entity.UserAddress;
 import com.greetlabs.swiftcart.repository.AddressRepository;
-import com.greetlabs.swiftcart.repository.UserRepository;
+import com.greetlabs.swiftcart.service.AddressService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 
 @Service
-public class AddressServiceImpl {
+@AllArgsConstructor
+@NoArgsConstructor
+public class AddressServiceImpl implements AddressService {
 	
 	
 	@Autowired
 	private AddressRepository repo;
-	@Autowired
-	private UserRepository userepo;
 	
+	@Override
+	public UserAddressDTO saveAddress(UserAddressDTO address) {
+		
+//		 User user = userepo.findById(userId)
+//                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
+		
+		
+		 
+//	    if (UserEmail == null || UserEmail.isEmpty()) {
+//	        throw new RuntimeException("Email cannot be null or empty");
+//	    }
+//
+//	    
+//	    Product product = prorepo.findById(productId)
+//	            .orElseThrow(() -> new RuntimeException("Product Not Found"));
+
+		
+		UserAddress useraddress=new UserAddress(
+				address.getAddressId(),
+				address.getName(),
+				address.getMobileNumber(),
+				address.getPinCode(),
+				address.getLocality(),
+				address.getCity(),
+				address.getState(),
+				address.getCountry(),
+				address.getUserEmail()
+				);
+		UserAddress saveAddress=repo.save(useraddress);	
+		
+		UserAddressDTO addressDTO=new UserAddressDTO(
+				saveAddress.getAddressId(),
+				saveAddress.getName(),
+				saveAddress.getMobileNumber(),
+				saveAddress.getPinCode(),
+				saveAddress.getLocality(),
+				saveAddress.getCity(),
+				saveAddress.getState(),
+				saveAddress.getCountry(),
+				saveAddress.getUserEmail()
+				);
+		
+		
+		return addressDTO;
+		
+
+	}
 	
-	 public Address addAddress(String Email, Address address) {
-	        User user = userepo.findByUserEmail(Email).orElseThrow(() -> new RuntimeException("User not found"));
-//	        address.
-	        return repo.save(address);
-	    }
 	
 }

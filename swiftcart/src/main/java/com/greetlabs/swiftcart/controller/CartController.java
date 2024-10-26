@@ -36,11 +36,7 @@ public class CartController  {
 	
 	@Autowired
 	private CartRepository repo;
-//	
-//	@GetMapping("/get")
-//	public String name() {
-//		return "working";
-//	}
+
 	
 	@PostMapping("/cart/addtocart")
 	public ResponseEntity<CartResponseDto> addTOCart(@RequestBody CartDto cartDto,
@@ -59,13 +55,13 @@ public class CartController  {
 		
 		return ResponseEntity.ok(cartItem);
 		
-	}
+	}  
 	
 	
 	@GetMapping("/items")
 	public List<Cart> getCartItems(@RequestParam("userEmail") String userEmail){
-//		List<Cart> cartItems = service.getCartItems(userEmail);
-		return repo.findByuserEmail(userEmail);
+
+		return repo.findByUserEmail(userEmail);
 	}
 	
 	

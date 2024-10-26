@@ -10,6 +10,6 @@ import com.greetlabs.swiftcart.entity.Cart;
 public interface CartRepository extends JpaRepository<Cart, Integer> {
 	
 
-	List<Cart> findByuserEmail(String userEmail);
+	List<Cart> findByUserEmail(String userEmail);
 
 }
