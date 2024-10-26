@@ -3,11 +3,13 @@ package com.greetlabs.swiftcart.service.Impl;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.greetlabs.swiftcart.dto.UserAddressDTO;
+import com.greetlabs.swiftcart.entity.Product;
 import com.greetlabs.swiftcart.entity.UserAddress;
 import com.greetlabs.swiftcart.repository.AddressRepository;
 import com.greetlabs.swiftcart.service.AddressService;
@@ -74,5 +76,25 @@ public class AddressServiceImpl implements AddressService {
 	public void deleteaddress(Long addressId) {
 		repo.deleteById(addressId);
 	}
+
+	
+	public UserAddressDTO updateAddress(String userEmail, String name, String mobileNumber, Integer pinCode, String locality,
+			String city, String state, String country) {
+		
+		UserAddressDTO userAddressDto=new UserAddressDTO();
+		userAddressDto.setAddressId(userAddressDto.getAddressId());
+		userAddressDto.setName(userAddressDto.getName());
+		userAddressDto.setMobileNumber(userAddressDto.getMobileNumber());
+		userAddressDto.setPinCode(userAddressDto.getPinCode());
+		userAddressDto.setLocality(userAddressDto.getLocality());
+		userAddressDto.setCity(userAddressDto.getCity());
+		userAddressDto.setState(userAddressDto.getState());
+		userAddressDto.setCountry(userAddressDto.getCountry());
+		
+		
+		return userAddressDto;
+	}
+
+	
 
 }
