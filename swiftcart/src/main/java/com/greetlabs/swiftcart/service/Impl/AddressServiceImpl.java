@@ -28,16 +28,7 @@ public class AddressServiceImpl implements AddressService {
 	@Override
 	public UserAddressDTO saveAddress(String UserEmail, UserAddressDTO userAddressDto) {
 		
-		
-		 
-	    if (UserEmail == null || UserEmail.isEmpty()) {
-	        throw new RuntimeException("Email cannot be null or empty");
-	    }
-
-	    
-//	    Product product = prorepo.findById(productId)
-//	            .orElseThrow(() -> new RuntimeException("Product Not Found"));
-
+            
 		
 		UserAddress useraddress=new UserAddress(
 				userAddressDto.getAddressId(),
@@ -48,7 +39,7 @@ public class AddressServiceImpl implements AddressService {
 				userAddressDto.getCity(),
 				userAddressDto.getState(),
 				userAddressDto.getCountry(),
-				userAddressDto.getUserEmail()
+				UserEmail
 				
 				);
 		      
