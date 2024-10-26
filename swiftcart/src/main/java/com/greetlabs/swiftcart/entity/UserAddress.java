@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,21 +19,21 @@ public class UserAddress {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long AddressId;
+	private Long addressId;
 		
-	private String Name;
+	private String name;
 	
-	private String MobileNumber;
+	private String mobileNumber;
 	
-	private Integer PinCode;
+	private Integer pinCode;
 	
-	private String Locality;
+	private String locality;
 	
-	private String City;
+	private String city;
 	
-	private String State;
+	private String state;
 	
-	private String Country;
+	private String country;
 	
 //	@ManyToOne	
 	@JoinColumn(name = "userEmail",nullable = false)
