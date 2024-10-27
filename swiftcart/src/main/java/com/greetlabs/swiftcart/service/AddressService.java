@@ -14,7 +14,7 @@ public interface AddressService {
 	
 	 void deleteaddress(Long addressId);
 	 
-UserAddressDTO updateAddress(String userEmail, String name, String mobileNumber,Integer pinCode,String locality,String city, String state,String country);
+UserAddressDTO updateAddress(String name, String mobileNumber,Integer pinCode,String locality,String city, String state,String country);
 
 
 }
