@@ -27,12 +27,9 @@ public class AddressServiceImpl implements AddressService {
 	@Autowired
 	private AddressRepository repo;
 	
-	@Override
 	public UserAddressDTO saveAddress(String UserEmail, UserAddressDTO userAddressDto) {
 		
-            
-		
-		UserAddress useraddress=new UserAddress(
+            UserAddress useraddress=new UserAddress(
 				userAddressDto.getAddressId(),
 				userAddressDto.getName(),
 				userAddressDto.getMobileNumber(),
@@ -78,7 +75,7 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	
-	public UserAddressDTO updateAddress(String userEmail, String name, String mobileNumber, Integer pinCode, String locality,
+	public UserAddressDTO updateAddress( String name, String mobileNumber, Integer pinCode, String locality,
 			String city, String state, String country) {
 		
 		UserAddressDTO userAddressDto=new UserAddressDTO();
