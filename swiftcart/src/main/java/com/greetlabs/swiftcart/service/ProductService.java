@@ -26,5 +26,8 @@ public interface ProductService {
 	Product updateProduct(int id, String productName, Double price, String imageUrl,Integer discount,String category,String description);
 	
 	String generateProductUrl(int id);
+	
+
+	 void deleteproduct(int id);
 
 }
