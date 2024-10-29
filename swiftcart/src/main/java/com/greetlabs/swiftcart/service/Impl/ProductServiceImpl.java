@@ -109,6 +109,20 @@ public class ProductServiceImpl implements ProductService {
 	        return repo.save(existingProduct);
 	    }
 
+	
+	 private static final String BASE_URL = "https://swiftcart-backend-hcbccxbwhjb0b9fu.southindia-01.azurewebsites.net/swift-cart";
+    
+    @Override
+	public String generateProductUrl(int id) {
+		
+		StringBuilder  urlBuilder=new StringBuilder(BASE_URL);
+		
+		urlBuilder.append("?id=").append(id);
+		
+		return urlBuilder.toString();
+	}
+
+
 
 //	@Override
 //	public Product deleteProduct(int Id) {

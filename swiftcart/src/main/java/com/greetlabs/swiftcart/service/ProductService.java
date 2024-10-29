@@ -24,7 +24,7 @@ public interface ProductService {
 	Optional<ProductDto> getProductById(int Id);
 	
 	Product updateProduct(int id, String productName, Double price, String imageUrl,Integer discount,String category,String description);
-
-
+	
+	String generateProductUrl(int id);
 
 }
