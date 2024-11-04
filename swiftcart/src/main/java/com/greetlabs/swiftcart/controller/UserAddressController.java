@@ -29,7 +29,7 @@ public class UserAddressController {
 	@Autowired
 	private AddressServiceImpl service;
 	
-	@Autowired
+	@Autowired 
 	private JwtService jwtservice;
 	
 	@PostMapping("/addAddress")
