@@ -129,14 +129,14 @@ public class ProductServiceImpl implements ProductService {
 //		// TODO Auto-generated method stub
 //		return null;
 //	}
-	@Override
-		public void deleteProduct(int id) {
-   		 Optional<Product> product = repo.findById(id);
-   		  if (!product.isPresent()) {
-     		   throw new ProductNotFoundException("Product with ID " + id + " not found");
-    		  }
-   		 repo.deleteById(id);
-		}
+//	@Override
+//		public void deleteProduct(int id) {
+//   		 Optional<Product> product = repo.findById(id);
+//   		  if (!product.isPresent()) {
+//     		   throw new ProductNotFoundException("Product with ID " + id + " not found");
+//    		  }
+//   		 repo.deleteById(id);
+//		}
 
 
 
