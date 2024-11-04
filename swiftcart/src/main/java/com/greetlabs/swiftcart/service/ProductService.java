@@ -28,6 +28,6 @@ public interface ProductService {
 	String generateProductUrl(int id);
 	
 
-	 void deleteProduct(int id);
+
 
 }
