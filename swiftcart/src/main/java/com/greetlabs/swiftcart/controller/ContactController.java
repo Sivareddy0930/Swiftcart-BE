@@ -34,7 +34,7 @@ public class ContactController {
 
 	    String jwtToken = token.replace("Bearer ", "").trim();
 	    
-	    String toEmail = "vanukurivamsikrishna@gmail.com";
+	    String toEmail = "vamsireddy1717@gmail.com";
 	    String subject = "Contact Form: " + contactDto.getSubject();
 	    String body = String.format("Name: %s\nEmail: %s\nMessage: %s", 
 	                                 contactDto.getName(), 
