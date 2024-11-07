@@ -33,7 +33,7 @@ public class SecurityConfiguration {
         return httpSecurity
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/swift-cart/register","/swift-cart/login","/swift-cart/forgot-password","/swift-cart/change-password","/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**","/webjars/**","/swagger-ui.html","/v3/api-docs/swagger-config")
+                        .requestMatchers("/swift-cart/register","/swift-cart/login","/swift-cart/forgot-password","/swift-cart/change-password","/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**","/webjars/**","/swagger-ui.html","/v3/api-docs/swagger-config","/swift-cart/**")
                         .permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())

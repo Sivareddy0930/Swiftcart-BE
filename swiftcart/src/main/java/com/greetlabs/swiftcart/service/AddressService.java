@@ -3,7 +3,6 @@ package com.greetlabs.swiftcart.service;
 import java.util.List;
 
 import com.greetlabs.swiftcart.dto.UserAddressDTO;
-import com.greetlabs.swiftcart.entity.Product;
 import com.greetlabs.swiftcart.entity.UserAddress;
 
 public interface AddressService {

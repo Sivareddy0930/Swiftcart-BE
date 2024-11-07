@@ -1,5 +1,7 @@
 package com.greetlabs.swiftcart.dto;
 
+import com.greetlabs.swiftcart.entity.Profile;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,23 +12,22 @@ import lombok.NoArgsConstructor;
 public class UserAddressDTO {
 
 	private Long addressId;
-	
-	private String name;
-	
-	private String mobileNumber;
-	
-	private Integer pinCode;
-	
-	private String locality;
-	
-	private String city;
-	
-	private String state;
-	
-	private String country;
-	
 
-    private String userEmail;
+	private String name;
+
+	private String mobileNumber;
+
+	private Integer pinCode;
+
+	private String locality;
+
+	private String city;
+
+	private String state;
+
+	private String country;
+
+	private String userEmail;
 
 
 //	public Long getAddressId() {
@@ -124,7 +125,5 @@ public class UserAddressDTO {
 //		this.userEmail = userEmail;
 //	}
 //	
-
-	
 
 }

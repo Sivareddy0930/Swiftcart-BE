@@ -1,6 +1,7 @@
 package com.greetlabs.swiftcart.service.Impl;
 
 
+import com.greetlabs.swiftcart.dto.ProfileDto;
 import com.greetlabs.swiftcart.dto.UserDto;
 import com.greetlabs.swiftcart.entity.User;
 import com.greetlabs.swiftcart.exception.UserAlreadyExistsException;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -62,4 +64,15 @@ public class UserServiceImpl implements UserService {
             throw new UserAlreadyExistsException("Account already exists with email: " + byUserEmail.get().getUserEmail());
         }
     }
+
+
+	@Override
+	public List<Object> getProfileData(String email) {
+		LOGGER.info("Inside getProfileData");
+		List<Object> profileData = userRepository.getProfileData(email);
+		LOGGER.info("Profile data found:{}",profileData);
+		return profileData;
+	}
+    
+    
 }

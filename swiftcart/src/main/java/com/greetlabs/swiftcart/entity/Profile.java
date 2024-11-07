@@ -14,7 +14,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @Table(name = "user_profile")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,7 +27,5 @@ public class Profile {
 	private Long userMobile;
 	private Long alterMobile;
 	private String userEmail;
-	
-	 @OneToMany(mappedBy = "profile")  // Ensure this matches the field name in UserAddress
-	    private List<UserAddress> addresses;
+
 }
