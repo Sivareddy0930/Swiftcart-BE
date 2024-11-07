@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Table(name="UserAddress")
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserAddress {
 	
+public class UserAddress {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long addressId;
@@ -36,11 +36,9 @@ public class UserAddress {
 	
 	private String country;
 	
-//	@ManyToOne	
-//	@JoinColumn(name = "userEmail",nullable = false)
+	//@ManyToOne	
+	//@JoinColumn(name = "userEmail",nullable = false)
 	private String userEmail;
 	
-	@ManyToOne
-    @JoinColumn(name = "profile_id")  // Ensure this column name matches your database schema
-    private Profile profile;      
+	 
 }

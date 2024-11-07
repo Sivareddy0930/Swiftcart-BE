@@ -3,13 +3,11 @@ package com.greetlabs.swiftcart.service.Impl;
 
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.greetlabs.swiftcart.dto.UserAddressDTO;
-import com.greetlabs.swiftcart.entity.Product;
 import com.greetlabs.swiftcart.entity.UserAddress;
 import com.greetlabs.swiftcart.repository.AddressRepository;
 import com.greetlabs.swiftcart.service.AddressService;
@@ -38,9 +36,7 @@ public class AddressServiceImpl implements AddressService {
 				userAddressDto.getCity(),
 				userAddressDto.getState(),
 				userAddressDto.getCountry(),
-				UserEmail, null
-				
-				);
+				userAddressDto.getUserEmail());
 		      
 		
 		
@@ -55,8 +51,8 @@ public class AddressServiceImpl implements AddressService {
 				saveAddress.getCity(),
 				saveAddress.getState(),
 				saveAddress.getCountry(),
-				saveAddress.getUserEmail()
-				);
+				saveAddress.getUserEmail());
+			
 		
 		
 		return addressDTO;
