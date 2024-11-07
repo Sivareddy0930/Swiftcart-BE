@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.greetlabs.swiftcart.dto.ProfileDto;
 import com.greetlabs.swiftcart.service.UserService;
 
 
@@ -29,12 +27,6 @@ public class ProfileController {
 		 List<Object> profileData = userService.getProfileData(userEmail);
 		 log.info("Profile data found:{}",profileData);
 		 return profileData;
-	    }
-	 
-	 @GetMapping("/test")
-	    public String test() {	
-	     log.info("Request received for profile date");
-		 return ",,";
 	    }
 	
 

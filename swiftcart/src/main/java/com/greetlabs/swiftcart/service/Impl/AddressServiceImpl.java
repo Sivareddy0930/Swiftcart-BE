@@ -36,7 +36,7 @@ public class AddressServiceImpl implements AddressService {
 				userAddressDto.getCity(),
 				userAddressDto.getState(),
 				userAddressDto.getCountry(),
-				userAddressDto.getUserEmail());
+				UserEmail);
 		      
 		
 		
@@ -51,7 +51,7 @@ public class AddressServiceImpl implements AddressService {
 				saveAddress.getCity(),
 				saveAddress.getState(),
 				saveAddress.getCountry(),
-				saveAddress.getUserEmail());
+				UserEmail);
 			
 		
 		
