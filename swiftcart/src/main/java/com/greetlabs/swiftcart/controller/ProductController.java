@@ -63,7 +63,7 @@ public class ProductController {
 	 
 	 @GetMapping("/generate-Url/{id}")
 	 public ResponseEntity<Map<String,String>> generateProductUrl(@PathVariable int id){
-//		 String baseUrl="https://swiftcart-backend-hcbccxbwhjb0b9fu.southindia-01.azurewebsites.net/swift-cart";
+//		 String baseUrl="https://backend--swiftcart-dphkezfcg7ekapax.southindia-01.azurewebsites.net/swift-cart";
 		 
 		 String productpageUrl=service.generateProductUrl(id);
 		 
@@ -73,6 +73,9 @@ public class ProductController {
 		 return ResponseEntity.ok(response);
 		 
 	 }
+	 
+
+
 	 
 	 
 	  @PutMapping("/updateProduct/{id}")
