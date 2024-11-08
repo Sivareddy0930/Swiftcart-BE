@@ -9,15 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProfileDto {
 	
-
+    private Long id;
 	private String firstName;
 	private String lastName;
 	private Long userMobile;
 	private Long alterMobile;
 	private String userEmail;
-	private String name;
 	
-	private String mobileNumber;
+	private Long adressId;
 
 	private Integer pinCode;
 
