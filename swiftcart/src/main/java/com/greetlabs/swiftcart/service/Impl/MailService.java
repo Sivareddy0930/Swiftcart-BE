@@ -5,6 +5,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.greetlabs.swiftcart.dto.ContactDto;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -36,12 +38,12 @@ public class MailService {
 	
 	private final String targetEmail = "vamsireddy1717@gmail.com"; // Set your email here
 
-    public void sendEmailFromUser(String Name, String Email, String subject, String Body) {
+    public void sendEmailFromUser(ContactDto contactdto, String Email) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(Email);
         message.setTo(targetEmail);
-        message.setSubject(subject);
-        message.setText("From: " + Name + "\nEmail: " + Email + "\n\n" +subject + message);
+        message.setSubject(contactdto.getSubject());
+        message.setText("From: " + contactdto.getName() + "\nEmail: " + Email + "\n\n" +contactdto.getMessage() );
 
         javamailsender.send(message);
     }
